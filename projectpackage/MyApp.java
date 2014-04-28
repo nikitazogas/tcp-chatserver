@@ -14,7 +14,7 @@ class ListenSocket implements Runnable {
         private BufferedReader in = null;
         private PrintWriter out = null;
         private PrintWriter connectedout = null;
-        public boolean accepted = false;
+        private boolean accepted = false;
         public ListenSocket(Socket psck,int pid) {
             this.socket = psck;
             this.id = pid;
@@ -120,7 +120,7 @@ public class MyApp {
 
     private static final int PORT = 8888;
     private static final int backlog = 0;
-    public static ServerSocket srvsck;
+    private static ServerSocket srvsck;
 
     public static Map<Integer,ListenSocket> socketmap = new HashMap<Integer,ListenSocket>();
     public static int socketCount = 0;
